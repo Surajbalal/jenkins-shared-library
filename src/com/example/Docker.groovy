@@ -10,12 +10,12 @@ class Docker implements Serializable{
 
     def buildImage(){
          script.withCredentials([
-        file(credentialsId: 'auth-service.env', variable: 'AUTH_ENV_FILE'),
-        file(credentialsId: 'user-service.env', variable: 'USER_ENV_FILE'),
-        file(credentialsId: 'captain-service.env', variable: 'CAPTAIN_ENV_FILE'),
-        file(credentialsId: 'ride-service.env', variable: 'RIDE_ENV_FILE'),
-        file(credentialsId: 'payment-service.env', variable: 'PAYMENT_ENV_FILE'),
-        file(credentialsId: 'call-service.env', variable: 'CALL_ENV_FILE')
+        script.file(credentialsId: 'auth-service.env', variable: 'AUTH_ENV_FILE'),
+        script.file(credentialsId: 'user-service.env', variable: 'USER_ENV_FILE'),
+        script.file(credentialsId: 'captain-service.env', variable: 'CAPTAIN_ENV_FILE'),
+        script.file(credentialsId: 'ride-service.env', variable: 'RIDE_ENV_FILE'),
+        script.file(credentialsId: 'payment-service.env', variable: 'PAYMENT_ENV_FILE'),
+        script.file(credentialsId: 'call-service.env', variable: 'CALL_ENV_FILE')
     ]) {
         script.sh '''
             cd Micro-Services
@@ -42,12 +42,12 @@ class Docker implements Serializable{
 
     def pushImage(){
         script.withCredentials([
-        file(credentialsId: 'auth-service.env', variable: 'AUTH_ENV_FILE'),
-        file(credentialsId: 'user-service.env', variable: 'USER_ENV_FILE'),
-        file(credentialsId: 'captain-service.env', variable: 'CAPTAIN_ENV_FILE'),
-        file(credentialsId: 'ride-service.env', variable: 'RIDE_ENV_FILE'),
-        file(credentialsId: 'payment-service.env', variable: 'PAYMENT_ENV_FILE'),
-        file(credentialsId: 'call-service.env', variable: 'CALL_ENV_FILE')
+        script.file(credentialsId: 'auth-service.env', variable: 'AUTH_ENV_FILE'),
+        script.file(credentialsId: 'user-service.env', variable: 'USER_ENV_FILE'),
+        script.file(credentialsId: 'captain-service.env', variable: 'CAPTAIN_ENV_FILE'),
+        script.file(credentialsId: 'ride-service.env', variable: 'RIDE_ENV_FILE'),
+        script.file(credentialsId: 'payment-service.env', variable: 'PAYMENT_ENV_FILE'),
+        script.file(credentialsId: 'call-service.env', variable: 'CALL_ENV_FILE')
     ]) {
         script.sh '''
             cd Micro-Services
