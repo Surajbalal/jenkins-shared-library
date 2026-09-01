@@ -1,5 +1,5 @@
 import com.example.Docker
-def buildImage() {
+def call() {
    
   return new Docker(this).buildImage()
 

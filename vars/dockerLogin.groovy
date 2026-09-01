@@ -1,4 +1,4 @@
 import com.example.Docker
-def dockerLogin(){
+def call(){
    return new Docker(this).dockerLogin()
 }
