@@ -15,6 +15,6 @@
 // }
 import com.example.Docker
 
-df call(){
+def call(){
     return new Docker(this).pushImage()
 }
