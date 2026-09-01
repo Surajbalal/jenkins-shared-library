@@ -33,8 +33,8 @@ class Docker implements Serializable{
                     )
                 ]){
                     script.sh '''
-            echo "${script.DOCKER_PASSWORD}" | docker login \
-                --username "${script.DOCKER_USER}" \
+            echo "$DOCKER_PASSWORD" | docker login \
+                --username "$DOCKER_USER" \
                 --password-stdin
         '''
                 }
